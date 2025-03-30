@@ -1,0 +1,32 @@
+{% load static %}
+
+<!-- Discord Section -->
+<section id="ucretsiz-ekitap" class="ebook">
+    <div class="container">
+        <div class="ebook-content">
+            {% if discord_section %}
+            <div class="ebook-image">
+                <img src="{{ discord_section.community_image.url }}" alt="Rehber Yazılım Discord Topluluğu">
+            </div>
+            <div class="ebook-text">
+                <h3>{{ discord_section.title }}</h3>
+                <p>{{ discord_section.description }}</p>
+                
+                <div class="discord-stats">
+                    {% for feature in discord_section.features.all %}
+                    <div class="stat-item">
+                        <i class="{{ feature.icon }}"></i>
+                        <span>{{ feature.text }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <a href="{{ discord_section.discord_link }}" target="_blank" class="btn btn-discord">
+                    <i class="fab fa-discord"></i>
+                    Sunucuya Katıl
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

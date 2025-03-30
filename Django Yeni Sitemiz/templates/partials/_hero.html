@@ -1,0 +1,49 @@
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-text">
+            <h1>Yazılım Dillerini Kolayca Öğrenin ve<br>Yeteneklerinizi Paraya Çevirerek<br>Geçiminizi Sağlayın.</h1>
+            <p>Aşağıdaki Videoyu İzleyin</p>
+        </div>
+        <div class="video-container">
+            <div class="custom-video-player">
+                <video id="mainVideo" poster="{% static 'images/video-container2.webp' %}">
+                    <source src="{% static 'videos/intro.mp4' %}" type="video/mp4">
+                    Tarayıcınız video elementini desteklemiyor.
+                </video>
+                <div class="video-controls">
+                    <div class="video-progress">
+                        <div class="progress-bar">
+                            <div class="progress-filled"></div>
+                        </div>
+                    </div>
+                    <div class="controls-main">
+                        <button class="play-pause">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="time">
+                            <span class="current">0:00</span>
+                            <span>/</span>
+                            <span class="duration">0:00</span>
+                        </div>
+                        <div class="volume-container">
+                            <button class="volume">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <div class="volume-slider">
+                                <div class="volume-progress">
+                                    <div class="volume-filled"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="fullscreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

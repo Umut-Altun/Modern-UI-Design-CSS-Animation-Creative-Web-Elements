@@ -1,0 +1,22 @@
+{% load static %}
+
+<!-- SSS Section -->
+<section id="sss" class="faq">
+    <div class="container">
+        <h2>Sıkça Sorulan Sorular</h2>
+        
+        <div class="faq-list">
+            {% for faq in faqs %}
+            <div class="faq-item">
+                <button class="faq-question">
+                    {{ faq.question }}
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>{{ faq.answer }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

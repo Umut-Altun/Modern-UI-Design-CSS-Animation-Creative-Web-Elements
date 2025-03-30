@@ -1,0 +1,24 @@
+{% load static %}
+
+<!-- Eğitimler Section -->
+<section id="egitimler" class="courses">
+    <div class="container">
+        <h2>YouTube Eğitim Serileri</h2>
+        <p class="section-desc">Yazılım alanında size yardımcı olacak kapsamlı eğitimlerimiz ve daha fazlası...</p>
+        
+        <div class="courses-grid">
+            {% for course in latest_courses %}
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="{{ course.thumbnail.url }}" alt="{{ course.title }}">
+                </div>
+                <div class="course-content">
+                    <h3>{{ course.title }}</h3>
+                    <p>{{ course.description }}</p>
+                    <a href="{{ course.url }}" class="btn" target="_blank">İçeriğe Git</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

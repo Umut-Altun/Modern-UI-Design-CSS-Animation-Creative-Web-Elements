@@ -1,0 +1,306 @@
+/* Header Styles */
+.header {
+    padding: 24px 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 37px;
+    width: auto;
+}
+
+.back-to-blog {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.back-to-blog i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-blog:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+.back-to-blog:hover i {
+    transform: translateX(-3px);
+}
+
+@media (max-width: 768px) {
+    .back-to-blog span {
+        display: none;
+    }
+
+    .back-to-blog {
+        padding: 8px;
+    }
+
+    .back-to-blog i {
+        font-size: 16px;
+    }
+}
+
+/* Eğitimler Hero Section */
+.tutorials-hero {
+    padding: 120px 0 40px;
+    text-align: center;
+    position: relative;
+}
+
+.tutorials-hero p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filter Bar */
+.filter-bar {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 8px;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+}
+
+/* Videos Grid */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.video-card:hover {
+    transform: translateY(-5px) !important;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.play-overlay i {
+    font-size: 48px;
+    color: white;
+}
+
+.video-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.video-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.video-content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.video-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-youtube, .btn-download {
+    padding: 8px 16px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    white-space: nowrap;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.btn-youtube {
+    background: #ff0000;
+}
+
+.btn-youtube:hover {
+    background: #cc0000;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+.btn-youtube i {
+    font-size: 16px;
+}
+
+.btn-download {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-download:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.btn-download i {
+    font-size: 16px;
+}
+
+/* Animasyon için transition süreleri */
+.video-card {
+    transition: opacity 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tutorials-hero h1 {
+        font-size: 36px;
+    }
+
+    .tutorials-hero p {
+        font-size: 18px;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .filter-btn {
+        margin: 4px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorials-hero h1 {
+        font-size: 28px;
+    }
+
+    .tutorials-hero p {
+        font-size: 16px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin: 4px;
+    }
+} 

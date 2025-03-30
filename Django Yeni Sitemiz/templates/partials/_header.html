@@ -1,0 +1,21 @@
+{% load static %}
+<!-- Header -->
+<header class="header">
+    <nav class="nav">
+        <a href="{% url 'pages:home' %}" class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Rehber Yazılım Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="{% url 'pages:home' %}#egitimler">Eğitimler</a></li>
+            <li><a href="{% url 'pages:home' %}#ucretsiz-ekitap"><i class="fab fa-discord"></i>Topluluk</a></li>
+            <li><a href="{% url 'pages:blog' %}">Blog</a></li>
+            <li><a href="{% url 'pages:home' %}#ben-kimim">Ben Kimim?</a></li>
+            <li>
+                <a href="https://altunumut7.pythonanywhere.com/register/" class="new-app" target="_blank">
+                    RehberPOS
+                    <span class="new-badge">UYGULAMA</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

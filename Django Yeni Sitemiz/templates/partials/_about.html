@@ -1,0 +1,31 @@
+{% load static %}
+
+<!-- Ben Kimim Section -->
+<section id="ben-kimim" class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="{{ about_section.profile_image.url }}" alt="Profil">
+                <div class="experience-badge">
+                    <span class="years">{{ about_section.experience_years }}</span>
+                    <span class="text">Yıl<br>Deneyim</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <h2>{{ about_section.title }}</h2>
+                <div class="about-description">
+                    <p class="lead">{{ about_section.description }}</p>
+                    
+                    <div class="about-details">
+                        {% for detail in about_section.details.all %}
+                        <div class="detail-item">
+                            <i class="{{ detail.icon }}"></i>
+                            <p>{{ detail.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

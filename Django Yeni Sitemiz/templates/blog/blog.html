@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blog - Yazılım ve Teknoloji Makaleleri{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/skeleton.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <p>En güncel teknoloji haberleri, yazılım ipuçları ve yapay zeka gelişmeleri burada</p>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+    <div class="container">
+        <div class="category-tabs">
+            <button class="category-tab active" data-category="all">Tümü</button>
+            {% for category in categories %}
+            <button class="category-tab" data-category="{{ category.slug }}">{{ category.name }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post">
+    {% if featured_post %}
+    <div class="container">
+        <div class="featured-card">
+            <div class="featured-image">
+                <img src="{{ featured_post.image.url }}" alt="{{ featured_post.title }}">
+                <div class="featured-badge">Öne Çıkan</div>
+            </div>
+            <div class="featured-content">
+                <div class="post-meta">
+                    <span class="category">{{ featured_post.category.name }}</span>
+                    <span class="date">{{ featured_post.created_at|date:"d F Y" }}</span>
+                </div>
+                <h2>{{ featured_post.title }}</h2>
+                <p>{{ featured_post.excerpt }}</p>
+                <a href="{% url 'pages:blog_post' slug=featured_post.slug %}" class="btn btn-primary">Devamını Oku</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid">
+        <div class="container">
+            <div class="posts-grid">
+                {% for post in posts %}
+                <article class="post-card" data-category="{{ post.category.slug }}">
+                    <div class="post-image">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                        <div class="post-category">{{ post.category.name }}</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="date">{{ post.created_at|date:"d F Y" }}</span>
+                            <span class="read-time">{{ post.read_time }} dk okuma</span>
+                        </div>
+                        <h3>{{ post.title }}</h3>
+                        <a href="{% url 'blog_post' slug=post.slug %}" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Skeleton Template -->
+    <template id="skeleton-template">
+        <article class="post-card skeleton">
+            <div class="post-image"></div>
+            <div class="post-content">
+                <div class="title-skeleton skeleton"></div>
+                <div class="text-skeleton skeleton"></div>
+                <div class="text-skeleton skeleton"></div>
+            </div>
+        </article>
+    </template>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/blog.js' %}" defer></script>
+{% endblock %}
+
+
+
+

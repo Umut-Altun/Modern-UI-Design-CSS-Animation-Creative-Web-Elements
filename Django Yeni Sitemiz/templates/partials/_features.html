@@ -1,0 +1,15 @@
+{% load static %}
+
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <div class="feature-grid">
+            {% for feature in features %}
+            <div class="feature-item">
+                <i class="{{ feature.icon }}"></i>
+                <h3>{{ feature.title }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
